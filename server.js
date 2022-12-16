@@ -28,6 +28,9 @@ app.get("/api/users", (req, res) => {
 app.get("api/user/1", (req, res) => {
     return res.json(req.params.id);
 });
+app.get("api/users/name/id", (req, res) => {
+    return res.json(req.query.id);
+});
 
 app.get("api/users/id", (req, res) => {
     const id1 = req.params.id;
@@ -37,9 +40,8 @@ app.get("api/users/id", (req, res) => {
     return res.json(req.params.id);
 });
 
-app.get("api/users/name/id", (req, res) => {
-    return res.json(req.query.id);
-});
+
+
 
 // Add a new route to get a *SINGLE* user (you can use either path param or query param)
 // /api/users/1      <-- path param (req.params.id)
